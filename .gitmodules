@@ -1,0 +1,3 @@
+[submodule "vendor-dev/php-devil/php-devil"]
+	path = vendor-dev/php-devil/php-devil
+	url = https://github.com/php-devil/php-devil.git
