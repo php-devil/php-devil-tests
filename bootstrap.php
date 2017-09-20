@@ -8,6 +8,17 @@
  */
 
 require_once __DIR__ . '/vendor/autoload.php';
-
-\PhpDevil\Devil::setPathOf('@web', __DIR__, '/');
 defined('TESTS_BOOTSTRAP_LOCATION') or define('TESTS_BOOTSTRAP_LOCATION', str_replace('\\', '/', __DIR__));
+
+function ensureRootAlias(){
+    if (\PhpDevil\Devil::ensureAliases()) {
+        \PhpDevil\Devil::setPathOf('@web', __DIR__, '/');
+    }
+}
+
+function ensureTranslations()
+{
+    if(\PhpDevil\Devil::ensureTranslations()) {
+        \PhpDevil\Devil::setInterfaceLanguage('en');
+    }
+}

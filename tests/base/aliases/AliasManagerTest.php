@@ -8,11 +8,19 @@
 namespace PhpDevil\testing\tests\base\aliases;
 
 use PhpDevil\base\aliases\InvalidAliasException;
+use PhpDevil\base\aliases\renderers\Translation;
 use PhpDevil\Devil;
 use PHPUnit\Framework\TestCase;
 
 class AliasManagerTest extends TestCase
 {
+    public function setUp()
+    {
+        ensureRootAlias();
+        ensureTranslations();
+        Devil::setInterfaceLanguage('ru');
+    }
+
     public function testStandaloneShortcut()
     {
         $this->assertEquals(TESTS_BOOTSTRAP_LOCATION, Devil::getPathOf('@web'));
@@ -43,7 +51,7 @@ class AliasManagerTest extends TestCase
     public function testLanguagePathRender()
     {
         $corePath = Devil::getPathOf('@core');
-        $expected = $corePath . '/messages/ru/exceptions';
+        $expected = $corePath . '/' . Translation::MESS_DIR_NAME . '/ru/exceptions';
         $this->assertEquals($expected, Devil::getPathOf('@core{...}exceptions', ['renderer'=>'translation', 'language' => 'ru']));
     }
 
