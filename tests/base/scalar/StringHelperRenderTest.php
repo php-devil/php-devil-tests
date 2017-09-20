@@ -79,4 +79,10 @@ class StringHelperRenderTest extends TestCase
         );
     }
 
+    public function testNameFromID()
+    {
+        $this->assertEquals('SomeIdentifier', StringHelper::convertI2N('sOme-IDentiFier'));
+    }
+
+
 }
