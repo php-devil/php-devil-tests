@@ -16,8 +16,7 @@ class AliasManagerTest extends TestCase
 {
     public function setUp()
     {
-        ensureRootAlias();
-        ensureTranslations();
+        ensureKernelConfigured();
         Devil::setInterfaceLanguage('ru');
     }
 

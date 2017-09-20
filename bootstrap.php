@@ -10,15 +10,13 @@
 require_once __DIR__ . '/vendor/autoload.php';
 defined('TESTS_BOOTSTRAP_LOCATION') or define('TESTS_BOOTSTRAP_LOCATION', str_replace('\\', '/', __DIR__));
 
-function ensureRootAlias(){
+function ensureKernelConfigured(){
     if (\PhpDevil\Devil::ensureAliases()) {
         \PhpDevil\Devil::setPathOf('@web', __DIR__, '/');
     }
-}
-
-function ensureTranslations()
-{
     if(\PhpDevil\Devil::ensureTranslations()) {
         \PhpDevil\Devil::setInterfaceLanguage('en');
     }
 }
+
+

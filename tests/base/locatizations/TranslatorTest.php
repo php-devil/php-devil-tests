@@ -13,8 +13,7 @@ class TranslatorTest extends TestCase
 {
     protected function setUp()
     {
-        ensureRootAlias();
-        ensureTranslations();
+        ensureKernelConfigured();
         Devil::setInterfaceLanguage('en');
     }
 

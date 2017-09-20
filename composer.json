@@ -15,7 +15,8 @@
   "autoload": {
     "psr-4": {
       "PhpDevil\\": "vendor-dev/php-devil/php-devil",
-      "PhpDevil\\testing\\": ""
+      "PhpDevil\\testing\\": "",
+      "app\\": "app"
     }
   }
 }
