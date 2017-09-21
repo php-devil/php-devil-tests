@@ -17,4 +17,9 @@ class BaseModelTest extends WebAppTestCase
         $this->expectException(BaseModelException::class);
         new BaseModelMock('test', $this);
     }
+
+    public function testModelDump()
+    {
+        print_r(BaseModelMock::model());
+    }
 }
