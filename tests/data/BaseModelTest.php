@@ -10,7 +10,7 @@ use PhpDevil\data\BaseModelException;
 use PhpDevil\testing\mock\data\BaseModelMock;
 use PhpDevil\testing\tests\_helpers\WebAppTestCase;
 
-class BaseModelTest extends WebAppTestCase
+class BaseModelTest //extends WebAppTestCase
 {
     public function testNewModelThrowsException()
     {
