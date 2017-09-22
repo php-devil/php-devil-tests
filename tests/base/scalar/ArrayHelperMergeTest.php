@@ -51,4 +51,14 @@ class ArrayHelperMergeTest extends TestCase
     {
         $this->assertEquals($this->correct, ArrayHelper::mergeRecursively($this->default, $this->actual));
     }
+
+    public function testMergeWhenFirstEmpty()
+    {
+        $this->assertEquals($this->default, ArrayHelper::mergeRecursively([], $this->default));
+    }
+
+    public function testMergeWhenSecondEmpty()
+    {
+        $this->assertEquals($this->default, ArrayHelper::mergeRecursively($this->default, []));
+    }
 }
