@@ -6,4 +6,7 @@
  */
 
 return [
+    'components' => [
+        'db' => require __DIR__ . '/_db.php',
+    ],
 ];

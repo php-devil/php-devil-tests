@@ -8,4 +8,6 @@
  * По умолчанию это то же сединение, в котором размещена база даных проекта
  */
 
-return require __DIR__ . '/_db.php';
+$testDB = require __DIR__ . '/_db.php';
+$testDB['dsn'] = 'mysql:host=localhost;dbname=phpdevil-phpunit;';
+return $testDB;
