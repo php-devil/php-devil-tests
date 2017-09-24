@@ -5,8 +5,9 @@
  * @license http://www.php-devil.ru/license/
  */
 
-return [
-    'dsn'      => 'mysql:host=localhost;dbname=phpdevil-staging',
-    'user'     => 'root',
-    'password' => '',
-];
+namespace PhpDevil\testing\mock\data;
+use PhpDevil\data\ActiveRecord;
+
+class ActiveRecordMock extends ActiveRecord
+{
+}
