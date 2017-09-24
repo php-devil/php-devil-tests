@@ -13,7 +13,11 @@ class TestMigrationMock extends MigrationMock
     public function up()
     {
         return $this->createTable('test_table', [
-            'id' => $this->integer(),
+            'pk'     => $this->integerPrimaryKey(),
+            'id'     => $this->integer(11)->notNull()->unsigned()->autoIncrement()->primary(),
+            'name'   => $this->string()->notNull()->index('idx_name'),
+            'email'  => $this->string(60)->notNull()->unique('idx_email'),
+            'status' => $this->integer()->unsigned()->notNull()->defaultValue(1),
         ]);
     }
 

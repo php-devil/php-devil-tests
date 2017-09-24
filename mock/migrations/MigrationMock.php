@@ -12,6 +12,6 @@ abstract class MigrationMock extends Migration
 {
     public function createTable($tableName, array $definitions, $options = '')
     {
-        return $this->getCreateTableQuery($tableName, $definitions, $options);
+        return $this->createSchema($tableName, $definitions, $options);
     }
 }

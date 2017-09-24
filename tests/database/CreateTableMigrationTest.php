@@ -11,22 +11,38 @@ use PhpDevil\testing\tests\_helpers\WebAppTestCase;
 
 class CreateTableMigrationTest extends WebAppTestCase
 {
-    private $migration;
+    private $schema;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->migration = new TestMigrationMock();
+        $this->schema = (new TestMigrationMock())->up();
     }
 
     protected function tearDown()
     {
-        $this->migration = null;
+        $this->schema = null;
         parent::tearDown();
     }
 
-    public function testSqlQuery()
+    protected function column($name)
     {
-        print_r($this->migration->up());
+        return $this->schema->getColumnDefinition($name);
+    }
+
+
+    public function testIntegerColumn()
+    {
+        $this->assertEquals('int(11) unsigned not null default \'1\'', $this->column('status'));
+    }
+
+    public function testPrimaryKeyColumn()
+    {
+        $this->assertEquals('int(11) unsigned not null auto_increment', $this->column('id'));
+    }
+
+    public function testIntegerPrimaryKey()
+    {
+        $this->assertEquals($this->column('pk'), $this->column('id'));
     }
 }
