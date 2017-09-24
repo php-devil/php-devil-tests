@@ -15,8 +15,8 @@ class TestMigrationMock extends MigrationMock
         return $this->createTable('test_table', [
             'pk'     => $this->integerPrimaryKey(),
             'id'     => $this->integer(11)->notNull()->unsigned()->autoIncrement()->primary(),
-            'name'   => $this->string()->notNull()->index('idx_name'),
-            'email'  => $this->string(60)->notNull()->unique('idx_email'),
+            'name'   => $this->string()->notNull()->index(),
+            'email'  => $this->string(60)->notNull()->unique(),
             'status' => $this->integer()->unsigned()->notNull()->defaultValue(1),
         ]);
     }
