@@ -1,0 +1,14 @@
+<?php
+/**
+ * @link http://www.php-devil.ru/
+ * @copyright Copyright (c) 2017 Web Wizardry
+ * @license http://www.php-devil.ru/license/
+ */
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$config = require __DIR__ . '/app/config/console.php';
+if(\PhpDevil\Devil::ensureTranslations()) {
+    \PhpDevil\Devil::setInterfaceLanguage('en');
+}
+(new \PhpDevil\console\Application($config))->run($argv);

@@ -7,5 +7,8 @@
 
 $config = require __DIR__ . '/common.php';
 
+$config['modules']['migrate'] = [
+    'class' => \PhpDevil\modules\migrate\MigrateModule::class,
+];
 
 return $config;
