@@ -26,7 +26,6 @@ class WebAppTestCase extends TestCase
     protected function appConfig()
     {
         $config = require dirname(dirname(__DIR__)) . '/app/config/web.php';
-
         $config['components']['db']= require dirname(dirname(__DIR__)) . '/app/config/_db-test.php';
 
         $config['components']['session']['name']    = 'phpunit';

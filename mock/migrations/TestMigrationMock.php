@@ -21,8 +21,8 @@ class TestMigrationMock extends MigrationMock
         ]);
     }
 
-    public function down()
+    public function down($soft = false)
     {
-        // TODO: Implement down() method.
+        return $this->dropTable('test_table', $soft);
     }
 }

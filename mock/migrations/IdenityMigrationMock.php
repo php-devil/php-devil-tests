@@ -20,8 +20,8 @@ class IdenityMigrationMock extends Migration
         ]);
     }
 
-    public function down()
+    public function down($soft = false)
     {
-        $this->dropTable('phpunit_idenity');
+        $this->dropTable('phpunit_idenity', $soft);
     }
 }

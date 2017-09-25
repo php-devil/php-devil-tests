@@ -5,7 +5,4 @@
  * @license http://www.php-devil.ru/license/
  */
 
-$config = require __DIR__ . '/common.php';
-
-
-return $config;
+require __DIR__ . '/app/config/console.php';

@@ -5,7 +5,5 @@
  * @license http://www.php-devil.ru/license/
  */
 
-$config = require __DIR__ . '/common.php';
+require dirname(__DIR__) . '/app/config/web.php';
 
-
-return $config;
