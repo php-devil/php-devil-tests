@@ -6,7 +6,7 @@
  */
 
 return [
-    'dsn'      => 'mysql:host=localhost;dbname=phpdevil-staging',
+    'dsn'      => 'mysql:host=localhost;dbname=phpdevil-dev',
     'user'     => 'root',
     'password' => '',
 ];
