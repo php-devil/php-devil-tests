@@ -5,6 +5,9 @@
  * @license http://www.php-devil.ru/license/
  */
 
+\PhpDevil\Devil::setPathOf('@app', dirname(__DIR__));
+
+
 $config = require __DIR__ . '/common.php';
 
 $config['modules']['migrate'] = [
